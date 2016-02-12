@@ -24,6 +24,7 @@
 		41AE17BE1C6A1349002A74D1 /* MindmapCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AE17BD1C6A1349002A74D1 /* MindmapCollection.swift */; };
 		69E345BF5544A72F16590F17 /* Pods_MindIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C35EED14358DE4B511BC208 /* Pods_MindIt.framework */; };
 		6D260F7B1C6DE8A700222153 /* tmp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D260F7A1C6DE8A700222153 /* tmp.swift */; };
+		6DDA1B901C6DEBAC00EFE6C2 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDA1B8F1C6DEBAC00EFE6C2 /* Presenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		41AE17BB1C69FBEB002A74D1 /* NodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeTableViewCell.swift; sourceTree = "<group>"; };
 		41AE17BD1C6A1349002A74D1 /* MindmapCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MindmapCollection.swift; sourceTree = "<group>"; };
 		6D260F7A1C6DE8A700222153 /* tmp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tmp.swift; sourceTree = "<group>"; };
+		6DDA1B8F1C6DEBAC00EFE6C2 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		9C35EED14358DE4B511BC208 /* Pods_MindIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7A4D76B1FD4179D2F68D13 /* Pods-MindIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-MindIt/Pods-MindIt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				415BBA5D1C69EBBC0014F6FC /* TableViewPresenter.swift */,
+				6DDA1B8F1C6DEBAC00EFE6C2 /* Presenter.swift */,
 				412431891C6D08F0007A7E81 /* TrackerDelegate.swift */,
 			);
 			name = presenter;
@@ -402,6 +405,7 @@
 				415BBA2F1C69EA770014F6FC /* AppDelegate.swift in Sources */,
 				4124318A1C6D08F0007A7E81 /* TrackerDelegate.swift in Sources */,
 				415BBA691C69ECDA0014F6FC /* MeteorTracker.swift in Sources */,
+				6DDA1B901C6DEBAC00EFE6C2 /* Presenter.swift in Sources */,
 				415BBA641C69EC570014F6FC /* HomeViewController.swift in Sources */,
 				415BBA6B1C69ECFE0014F6FC /* Node.swift in Sources */,
 			);
