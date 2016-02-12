@@ -55,7 +55,7 @@
                                     <segue destination="NuU-PK-STG" kind="show" id="kdJ-y0-Qgo"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a MindMap id or url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="76g-06-X3b">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="PJZtarz6z5hd8koQ3" borderStyle="roundedRect" placeholder="Enter a MindMap id or url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="76g-06-X3b">
                                 <rect key="frame" x="208" y="174" width="184" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>

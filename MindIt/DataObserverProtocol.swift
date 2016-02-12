@@ -8,5 +8,5 @@
 import Foundation
 protocol DataObserverProtocol {
     func documentAdded(id : String)
-    func documentChanged(id : String)
+    func documentChanged(id : String, fields : NSDictionary)
 }

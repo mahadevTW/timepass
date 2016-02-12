@@ -11,6 +11,7 @@ import SwiftDDP
 class Node: MeteorDocument {
     
     //MARK : Properties
+    var _id : String?
     var collection:String = "Mindmaps"
     var parentId:String?
     var position:String?
@@ -20,17 +21,21 @@ class Node: MeteorDocument {
     var name:String?
     var childSubTree:[String]?
     var index:Int?
-    
+    var depth : Int?
+    var directionToggler : Bool?
     
     //MARK : Initialiser
     required init(id: String, fields: NSDictionary?) {
         super.init(id: id, fields: fields)
-        
+        _id = id
     }
     
     //mark : Added new Code
     override func setValue(value: AnyObject?, forKey key: String) {
         switch(key) {
+        case "_id" :
+           _id = value as? String
+            break
             
         case "parentId":
             parentId = value as? String;
@@ -66,19 +71,28 @@ class Node: MeteorDocument {
             print("No Such element found : " , key);
         }
     }
-    func getName() -> String{
+    func getName() -> String {
         return self.name!
     }
-    func getChildSubtree() -> [String]{
+    func getChildSubtree() -> [String] {
         return self.childSubTree!
     }
     func getRootId() -> String {
         return self.rootId!
     }
-    func getLeft() -> [String]{
+    func getLeft() -> [String] {
         return self.left!
     }
-    func getRight() -> [String]{
+    func getRight() -> [String] {
         return self.right!
+    }
+    func getId() -> String {
+        return self._id!
+    }
+    func getDepth() -> Int {
+        return self.depth!
+    }
+    func getDirectionToggler() -> Bool{
+        return directionToggler!
     }
 }

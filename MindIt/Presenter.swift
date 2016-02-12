@@ -11,14 +11,16 @@ class Presenter: Connectable , MindmapProtocol, DataObserverProtocol{
     
     //MARK : Properties
     static private var presenter : Presenter? = nil;
-    var mindmap:[Node]?;
+    //var mindmap:[Node];
     let meteorTracker:MeteorTracker
     let viewDataUtility : ViewDataUtility
+    var mindmapId : String?
     
     //MARK : Initializers
     private init(){
         meteorTracker = MeteorTracker.getInstance();
         viewDataUtility = ViewDataUtility();
+        //mindmap = [Node]()
     }
     //MARK : Methods
     
@@ -30,6 +32,7 @@ class Presenter: Connectable , MindmapProtocol, DataObserverProtocol{
     }
     
     func connectToServer(mindmapId: String) -> Bool {
+        self.mindmapId = mindmapId
         if(meteorTracker.isConnectedToNetwork()) {
             meteorTracker.connectToServer(mindmapId)
             return true
@@ -40,23 +43,26 @@ class Presenter: Connectable , MindmapProtocol, DataObserverProtocol{
     }
     
     func getNodes() -> [Node] {
-        mindmap = meteorTracker.getNodes();
-        return mindmap!;
+        //mindmap = meteorTracker.getNodes();
+        return meteorTracker.mindmap;
     }
     
     func documentAdded(id: String) {
-        viewDataUtility.addDocumentToViewData(id , mindmap: mindmap!);
+        viewDataUtility.addDocumentToViewData(id , mindmap: meteorTracker.mindmap);
     }
-    func documentChanged(id : String){
-        viewDataUtility.UpdateDocumentToViewData(id)
+    func documentChanged(id : String , fields : NSDictionary){
+        print("Changed : ", fields)
+        
+        viewDataUtility.UpdateDocumentToViewData(id, fields: fields)
+        
     }
     
     func getNodeCount() -> Int{
-        mindmap = meteorTracker.getMindmap().sorted
-        return mindmap!.count
+       // mindmap = meteorTracker.getMindmap().sorted
+        return meteorTracker.mindmap.count
     }
     
     func getNodeAt(index : Int) -> Node{
-        return mindmap![index];
+        return meteorTracker.mindmap[index];
     }
 }

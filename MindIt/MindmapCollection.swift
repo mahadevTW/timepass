@@ -8,20 +8,34 @@
 
 import SwiftDDP
 
+    protocol MindMapCollectionDelegate {
+        func documentWasAdded()
+    }
+    
 class MindmapCollection: MeteorCollection<Node> {
     
     //Mark : Properties
     //let presenter : DataObserverProtocol = Presenter.getInstance()
     //MARK: Initialisers
+    var delegate: MindMapCollectionDelegate?
     override init(name: String) {
         super.init(name: name)
     }
     
-    
+    // Add Document to Mindmap initially
+    /*
+    func addIntialDocument(collection : String, id : String, fields :NSDictionary ){
+        super.documentWasAdded(collection, id: id, fields: fields)
+        
+    }
+    */
     //MARK : Methods
     override func documentWasAdded(collection: String, id: String, fields: NSDictionary?) {
         super.documentWasAdded(collection, id: id, fields: fields)
-        print("Newly Added")
+        //print("Collection : ", collection)
+        let presenter = Presenter.getInstance()
+        presenter.documentAdded(id)
+        //delegate?.documentWasAdded()
     }
     
     //Delete Will nerver be called (Soft delete)
@@ -33,5 +47,7 @@ class MindmapCollection: MeteorCollection<Node> {
     override func documentWasChanged(collection: String, id: String, fields: NSDictionary?, cleared: [String]?) {
         super.documentWasChanged(collection, id: id, fields: fields, cleared: cleared)
         print("Newly changed " , fields)
+        let presenter = Presenter.getInstance()
+        presenter.documentChanged(id , fields : fields!)
     }
 }
